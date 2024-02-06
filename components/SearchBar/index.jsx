@@ -3,7 +3,7 @@ import { useSearchContext } from "../../contexts/SearchContext";
 import searchIcon from "../../assets/search.svg";
 import { useState } from "react";
 
-function debounce(func, delay) {
+const debounce = (func, delay) => {
   let timeoutId;
 
   return function (...args) {
@@ -13,9 +13,9 @@ function debounce(func, delay) {
       func.apply(this, args);
     }, delay);
   };
-}
+};
 
-export default function SearchBar() {
+function SearchBar() {
   const { fetchData } = useSearchContext();
   const [isFocused, setIsFocused] = useState(false);
 
@@ -45,3 +45,5 @@ export default function SearchBar() {
     </InputContainer>
   );
 }
+
+export default SearchBar;
