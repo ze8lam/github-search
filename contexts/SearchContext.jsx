@@ -84,7 +84,6 @@ export function SearchProvider({ children = null }) {
 
   const changeSearchType = (type) => {
     setData({});
-    queryRef.current = "";
 
     if (type === searchTypes.REPOSITORY || type === searchTypes.USER) {
       setSearchType(type);
